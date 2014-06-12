@@ -1,6 +1,6 @@
 require "mkmf"
 
-found = find_header "wand/magick_wand.h",
+found = find_header "Magick++.h",
   "/app/vendor/graphicsmagick/include/GraphicsMagick",
   "/usr/local/Cellar/graphicsmagick/1.3.19_1/include/GraphicsMagick"
 
