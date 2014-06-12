@@ -1,4 +1,4 @@
 require "mkmf"
 
-pkg_config("GraphicsMagickWandX")
+pkg_config("GraphicsMagickWand")
 create_makefile("image")
