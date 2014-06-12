@@ -1,6 +1,6 @@
 #include <ruby.h>
 #include <string.h>
-#include <wand/magick_wand.h>
+#include </app/vendor/graphicsmagick/include/GraphicsMagick/wand/magick_wand.h>
 
 VALUE format(VALUE self, VALUE rb_image_blob)
 {
