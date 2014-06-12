@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.require_path = "lib"
   s.add_dependency "prawn", "~> 0.14"
   s.add_dependency "rake-compiler"
+  s.add_dependency "mini_portile"
   s.add_development_dependency "minitest"
   s.files = Dir.glob("{ext,lib,test}/**/*") + %w[README.markdown Rakefile]
 end

@@ -2,6 +2,7 @@ $LOAD_PATH.unshift  File.join(__dir__, "lib")
 
 require "rake/testtask"
 require "rake/extensiontask"
+require "mini_portile"
 
 task "default" => :test
 
@@ -13,6 +14,23 @@ Rake::TestTask.new do |t|
     t.pattern = "test/**/*_test.rb"
 end
 task "test" => :compile
+
+
+task :graphicsmagick do
+  recipe = MiniPortile.new("graphicsmagick", "1.3.19")
+  recipe.files = ["ftp://ftp.icm.edu.pl/pub/unix/graphics/GraphicsMagick/1.3/GraphicsMagick-1.3.19.tar.bz2"]
+  checkpoint = ".#{recipe.name}-#{recipe.version}.installed"
+
+  unless File.exist?(checkpoint)
+    recipe.cook
+    touch checkpoint
+  end
+
+  recipe.activate
+end
+
+task :compile => [:graphicsmagick]
+
 
 desc "Generate an example PDF using the images in test/fixtures"
 task "example" do
