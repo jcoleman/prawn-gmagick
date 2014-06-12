@@ -2,7 +2,7 @@ require "mkmf"
 
 puts "Current working directory - #{Dir.pwd}"
 
-found = find_header "Magick++.h",
+found = find_header "wand/magick_wand.h",
   "/app/vendor/graphicsmagick/include/GraphicsMagick",
   "/usr/local/Cellar/graphicsmagick/1.3.19_1/include/GraphicsMagick"
 
