@@ -2,7 +2,7 @@ require "mkmf"
 
 puts "Current working directory - #{Dir.pwd}"
 puts 'All possible directories'
-puts Dir.glob("/tmp/**/*/")
+puts Dir.glob("/tmp/graphicsmagick*/*/")
 
 found = find_header "wand/magick_wand.h",
   "/app/vendor/graphicsmagick/include/GraphicsMagick",
