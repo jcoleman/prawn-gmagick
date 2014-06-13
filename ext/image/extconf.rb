@@ -1,10 +1,19 @@
 require 'pathname'
 require "mkmf"
 
+puts "=-=-=-=-=-=-="
 puts "Current working directory - #{Dir.pwd}"
+puts "=-=-=-=-=-=-="
 puts ENV.to_h
-# puts Dir.glob("/tmp/*")
+puts "=-=-=-=-=-=-="
+build_dir = Pathname.new(ENV['BUNDLE_CONFIG']).parent.parent
+puts "=-=-=-=-=-=-="
+puts build_dir
+puts "=-=-=-=-=-=-="
+puts build_dir.entries
+puts "=-=-=-=-=-=-="
 
+# puts Dir.glob("/tmp/*")
 # puts 'All possible directories'
 # puts Dir.glob("/tmp/*")
 # found = find_header "wand/magick_wand.h",
