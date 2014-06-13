@@ -1,6 +1,9 @@
+require 'pathname'
 require "mkmf"
 
 puts "Current working directory - #{Dir.pwd}"
+puts ENV
+# puts Dir.glob("/tmp/*")
 
 # puts 'All possible directories'
 # puts Dir.glob("/tmp/*")
