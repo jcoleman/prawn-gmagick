@@ -1,19 +1,21 @@
 require 'pathname'
 require "mkmf"
 
-puts "=-=-=-=-=-=-="
-puts "Current working directory - #{Dir.pwd}"
-puts "=-=-=-=-=-=-="
-puts ENV.to_h
-puts "=-=-=-=-=-=-="
-bundle_config_path = ENV['BUNDLE_CONFIG']
-puts "bundle_config_path #{bundle_config_path}"
-puts "=-=-=-=-=-=-="
-build_dir = Pathname.new(bundle_config_path).parent.parent
-puts "Build dir: #{build_dir}"
-puts "=-=-=-=-=-=-="
-puts "Build dir entries: #{build_dir.entries}"
-puts "=-=-=-=-=-=-="
+if ENV['BUNDLE_CONFIG']
+  puts "=-=-=-=-=-=-="
+  puts "Current working directory - #{Dir.pwd}"
+  puts "=-=-=-=-=-=-="
+  puts ENV.to_h
+  puts "=-=-=-=-=-=-="
+  bundle_config_path = ENV['BUNDLE_CONFIG']
+  puts "bundle_config_path #{bundle_config_path}"
+  puts "=-=-=-=-=-=-="
+  build_dir = Pathname.new(bundle_config_path).parent.parent
+  puts "Build dir: #{build_dir}"
+  puts "=-=-=-=-=-=-="
+  puts "Build dir entries: #{build_dir.entries}"
+  puts "=-=-=-=-=-=-="
+end
 
 # puts Dir.glob("/tmp/*")
 # puts 'All possible directories'
