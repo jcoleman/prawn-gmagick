@@ -2,22 +2,17 @@ require 'pathname'
 require "mkmf"
 
 if ENV['BUNDLE_CONFIG']
-  # puts "=-=-=-=-=-=-="
-  # puts "Current working directory - #{Dir.pwd}"
-  # puts "=-=-=-=-=-=-="
-  # puts ENV.to_h
-  # puts "=-=-=-=-=-=-="
   bundle_config_path = ENV['BUNDLE_CONFIG']
-  # puts "bundle_config_path #{bundle_config_path}"
-  # puts "=-=-=-=-=-=-="
   build_dir = Pathname.new(bundle_config_path).parent.parent
-  # puts "Build dir: #{build_dir}"
-  # puts "=-=-=-=-=-=-="
-  # puts "Build dir entries: #{build_dir.entries}"
-  # puts "=-=-=-=-=-=-="
+
+  puts "Build dir vendor"
+  puts Dir.glob(build_dir.join("vendor"))
+
+  puts "Build dir vendor binaries"
+  puts Dir.glob(build_dir.join("vendor", "binaries"))
 
   find_header "wand/magick_wand.h",
-    build_dir.join("include/GraphicsMagick")
+    build_dir.join("vendor/binaries/include/GraphicsMagick")
 end
 
 # puts Dir.glob("/tmp/*")
