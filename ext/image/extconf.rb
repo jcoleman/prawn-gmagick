@@ -6,11 +6,13 @@ puts "Current working directory - #{Dir.pwd}"
 puts "=-=-=-=-=-=-="
 puts ENV.to_h
 puts "=-=-=-=-=-=-="
-build_dir = Pathname.new(ENV['BUNDLE_CONFIG']).parent.parent
+bundle_config_path = ENV['BUNDLE_CONFIG']
+puts "bundle_config_path #{bundle_config_path}"
 puts "=-=-=-=-=-=-="
-puts build_dir
+build_dir = Pathname.new(bundle_config_path).parent.parent
+puts "Build dir: #{build_dir}"
 puts "=-=-=-=-=-=-="
-puts build_dir.entries
+puts "Build dir entries: #{build_dir.entries}"
 puts "=-=-=-=-=-=-="
 
 # puts Dir.glob("/tmp/*")
