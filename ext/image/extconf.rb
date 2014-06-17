@@ -6,9 +6,12 @@ if ENV['BUNDLE_CONFIG']
   build_dir = Pathname.new(bundle_config_path).parent.parent
   find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
 
-  # find_library 
+  find_library 'libGraphicsMagick.a', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+  # /app/vendor/graphicsmagick/lib
+  # libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
   # libGraphicsMagick.a  libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
   # /app/vendor/graphicsmagick/lib
+  # libGraphicsMagickWand.a:
 end
 
 # puts Dir.glob("/tmp/*")
