@@ -11,7 +11,7 @@ if ENV['BUNDLE_CONFIG']
   puts "Build dir vendor binaries"
   puts Dir.glob(build_dir.join("vendor", "binaries"))
 
-  find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/")
+  find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
   # I/app/vendor/graphicsmagick/include/
 end
 
