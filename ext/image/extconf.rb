@@ -6,12 +6,16 @@ if ENV['BUNDLE_CONFIG']
   build_dir = Pathname.new(bundle_config_path).parent.parent
   find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
 
-  # find_library 'libGraphicsMagick.a', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+  find_library 'GraphicsMagickWand', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+  # -lGraphicsMagickWand -lGraphicsMagick
+
   # /app/vendor/graphicsmagick/lib
   # libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
   # libGraphicsMagick.a  libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
   # /app/vendor/graphicsmagick/lib
   # libGraphicsMagickWand.a:
+  # 2014-06-17T18:24:40.380238+00:00 app[worker.1]: sidekiq 3.0.2 app [0 of 2 busy]: symbol lookup error: /app/vendor/bundle/ruby/2.1.0/bundler/gems/prawn-gmagick-1225fc7dea49/lib/image.so: undefined symbol: InitializeMagick
+  # undefined symbol: InitializeMagick
 end
 
 # puts Dir.glob("/tmp/*")
