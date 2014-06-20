@@ -51,7 +51,9 @@ if ENV['BUNDLE_CONFIG']
   build_dir = Pathname.new(bundle_config_path).parent.parent
   puts "build_dir - #{build_dir}"
 
-  puts "build dir vendor contents- #{Dir.glob(build_dir.join('vendor'))}"
+  vendor_glob = "#{build_dir.join('vendor')}/*"
+  puts "vendor_glob - #{vendor_glob}"
+  puts "build dir vendor contents- #{Dir.glob(vendor_glob)}"
 end
 
 unless pkg_config("GraphicsMagickWand")
