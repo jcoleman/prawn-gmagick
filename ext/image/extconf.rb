@@ -10,14 +10,11 @@ if ENV['BUNDLE_CONFIG']
   gm_dir = build_dir.join "vendor/graphicsmagick"
 
   find_header "wand/magick_wand.h", gm_dir.join("include/GraphicsMagick")
-
-  puts "Old $LFLAGS - #{$LFLAGS}"
-  $LFLAGS ="-L #{gm_dir.join("lib")}"
-
-  find_library 'GraphicsMagickWand', 'InitializeMagick', gm_dir.join("lib")
+  unless find_library 'GraphicsMagickWand', 'InitializeMagick', gm_dir.join("lib")
+    throw "Could not find_library in", gm_dir.join("lib")
+  end
 
   # -lGraphicsMagickWand -lGraphicsMagick
-
   # /app/vendor/graphicsmagick/lib
   # libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
   # libGraphicsMagick.a  libGraphicsMagick++.a  libGraphicsMagick.la  libGraphicsMagick++.la  libGraphicsMagickWand.a  libGraphicsMagickWand.la  pkgconfig
