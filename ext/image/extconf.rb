@@ -14,7 +14,7 @@ if ENV['BUNDLE_CONFIG']
   puts "Old $LFLAGS - #{$LFLAGS}"
   $LFLAGS ="-L #{gm_dir.join("lib")}"
 
-  # find_library 'GraphicsMagickWand', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+  find_library 'GraphicsMagickWand', 'InitializeMagick', gm_dir.join("lib")
 
   # -lGraphicsMagickWand -lGraphicsMagick
 
