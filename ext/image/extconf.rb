@@ -46,6 +46,14 @@ puts "ROOT DIR IS - #{Dir.glob("/*")}"
 puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 puts "/app/vedor IS - #{Dir.glob("/app/vendor/*")}"
 
+if ENV['BUNDLE_CONFIG']
+  bundle_config_path = ENV['BUNDLE_CONFIG']
+  build_dir = Pathname.new(bundle_config_path).parent.parent
+  puts "build_dir - #{build_dir}"
+
+  puts "build dir vendor contents- #{Dir.glob(build_dir.join('vendor'))}"
+end
+
 unless pkg_config("GraphicsMagickWand")
   abort "GraphicsMagickWand could not be found."
 end
