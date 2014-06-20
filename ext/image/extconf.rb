@@ -40,6 +40,9 @@ puts "PKG_CONFIG_PATH IS - #{ENV['PKG_CONFIG_PATH']}"
 puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 puts "ROOT DIR IS - #{Dir.glob("/*")}"
 
+puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+puts "/app/vedor IS - #{Dir.glob("/app/vendor/*")}"
+
 unless pkg_config("GraphicsMagickWand")
   abort "GraphicsMagickWand could not be found."
 end
