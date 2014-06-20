@@ -2,14 +2,15 @@ require 'pathname'
 require "mkmf"
 
 if ENV['BUNDLE_CONFIG']
-  dir_config("GraphicsMagickWand")
-  find_library 'GraphicsMagickWand', 'InitializeMagick'
+  # dir_config("GraphicsMagickWand")
+  # find_library 'GraphicsMagickWand', 'InitializeMagick'
 
-  ## bundle_config_path = ENV['BUNDLE_CONFIG']
-  ## build_dir = Pathname.new(bundle_config_path).parent.parent
-  ## find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
+  bundle_config_path = ENV['BUNDLE_CONFIG']
+  build_dir = Pathname.new(bundle_config_path).parent.parent
+  find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
 
-  ## find_library 'GraphicsMagickWand', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+  find_library 'GraphicsMagickWand', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
+
   # -lGraphicsMagickWand -lGraphicsMagick
 
   # /app/vendor/graphicsmagick/lib
