@@ -35,6 +35,8 @@ require "mkmf"
 # end
 
 puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+puts "ENV - #{ENV.to_hash}"
+puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 puts "PKG_CONFIG_PATH IS - #{ENV['PKG_CONFIG_PATH']}"
 
 puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
