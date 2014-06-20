@@ -7,7 +7,12 @@ if ENV['BUNDLE_CONFIG']
 
   bundle_config_path = ENV['BUNDLE_CONFIG']
   build_dir = Pathname.new(bundle_config_path).parent.parent
-  find_header "wand/magick_wand.h", build_dir.join("vendor/graphicsmagick/include/GraphicsMagick")
+  gm_dir = build_dir.join "vendor/graphicsmagick"
+
+  find_header "wand/magick_wand.h", gm_dir.join("include/GraphicsMagickWand")
+
+  puts "Old $LFLAGS - #{$LFLAGS}"
+  $LFLAGS ="-L #{gm_dir.join("lib")}"
 
   # find_library 'GraphicsMagickWand', 'InitializeMagick', build_dir.join("vendor/graphicsmagick/lib")
 
