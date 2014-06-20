@@ -34,5 +34,9 @@ require "mkmf"
 #   throw "Could not find wand/magick_wand.h"
 # end
 
-pkg_config("GraphicsMagickWand")
+unless pkg_config("GraphicsMagickWand")
+  abort "GraphicsMagickWand could not be found."
+end
+
 create_makefile("image")
+
