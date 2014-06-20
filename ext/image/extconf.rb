@@ -54,6 +54,8 @@ if ENV['BUNDLE_CONFIG']
   vendor_glob = "#{build_dir.join('vendor')}/*"
   puts "vendor_glob - #{vendor_glob}"
   puts "build dir vendor contents- #{Dir.glob(vendor_glob)}"
+
+  puts "app dir contents- #{Dir.glob("/app/*")}"
 end
 
 unless pkg_config("GraphicsMagickWand")
