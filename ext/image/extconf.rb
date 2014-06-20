@@ -34,7 +34,12 @@ require "mkmf"
 #   throw "Could not find wand/magick_wand.h"
 # end
 
+puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 puts "PKG_CONFIG_PATH IS - #{ENV['PKG_CONFIG_PATH']}"
+
+puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+puts "ROOT DIR IS - #{Dir.glob("/*")}"
+
 unless pkg_config("GraphicsMagickWand")
   abort "GraphicsMagickWand could not be found."
 end
